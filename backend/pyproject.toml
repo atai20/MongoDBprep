@@ -1,0 +1,18 @@
+[project]
+name = "matcharena"
+version = "0.9.3"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+    "baseline: behaviour that is expected to hold on main",
+    "acceptance: acceptance criteria from open tickets",
+    "concurrency: tests that drive concurrent requests or workers",
+    "mongo: tests that depend on MongoDB query/index behaviour",
+    "api: tests that go through the HTTP layer",
+    "algorithm: rating/tolerance and pairing behaviour",
+    "redis: tests that exercise Redis coordination",
+]

@@ -1,0 +1,209 @@
+---
+pid: 55824
+cwd: |
+  C:\Users\kydsh\Downloads\mongodbgeneratequestion
+active_command: docker compose exec mongo mongosh
+last_command: use matcharena
+last_exit_code: 1
+---
+matcharena> db.queue_entries.find({ player_id: "PASTE_ID", status: { $in: ["waiting", "reserved"] } })
+| db.queue_entries.countDocuments({ player_id: "PASTE_ID", status: { $in: ["waiting", "reserved"] } })db.queue_entries.find({ player_id: "PASTE_ID", status: { $in: ["waiting", "reserved"] } })
+| db.queue_entries.countDocuments({ player_id: "PASTE_ID", status: { $in: ["waiting", "reserved"] } })
+PS C:\Users\kydsh\Downloads\mongodbgeneratequestion> db.queue_entries.find({ player_id: "5f60a216fe134039ab26ff8dacc3b5cb", status: { $in: ["waiting", "reserved"] } })
+>> db.queue_entries.countDocuments({ player_id: "5f60a216fe134039ab26ff8dacc3b5cb", status: { $in: ["waiting", "reserved"] } })
+At line:1 char:82
++ ... player_id: "5f60a216fe134039ab26ff8dacc3b5cb", status: { $in: ["waiti ...
++                                                              ~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to      
+delimit the name.
+At line:1 char:87
++ ... "5f60a216fe134039ab26ff8dacc3b5cb", status: { $in: ["waiting", "reser ...
++                                                        ~~~~~~~~~~
+Unexpected token '["waiting"' in expression or statement.
+At line:1 char:88
++ ... ayer_id: "5f60a216fe134039ab26ff8dacc3b5cb", status: { $in: ["waiting ...
++                                                                  ~
+Missing type name after '['.
+At line:1 char:97
++ ... 5f60a216fe134039ab26ff8dacc3b5cb", status: { $in: ["waiting", "reserv ...
++                                                                 ~
+Missing argument in parameter list.
+At line:2 char:92
++ ... player_id: "5f60a216fe134039ab26ff8dacc3b5cb", status: { $in: ["waiti ...
++                                                              ~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to      
+delimit the name.
+At line:2 char:97
++ ... "5f60a216fe134039ab26ff8dacc3b5cb", status: { $in: ["waiting", "reser ...
++                                                        ~~~~~~~~~~
+Unexpected token '["waiting"' in expression or statement.
+At line:2 char:98
++ ... ayer_id: "5f60a216fe134039ab26ff8dacc3b5cb", status: { $in: ["waiting ...
++                                                                  ~
+Missing type name after '['.
+At line:2 char:107
++ ... 5f60a216fe134039ab26ff8dacc3b5cb", status: { $in: ["waiting", "reserv ...
++                                                                 ~
+Missing argument in parameter list.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : InvalidVariableReferenceWithDrive
+
+PS C:\Users\kydsh\Downloads\mongodbgeneratequestion> docker compose exec mongo mongosh                               
+Current Mongosh Log ID: 6af140afa16953b8d2a1dec4
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.14.0
+Using MongoDB:          7.0.45
+Using Mongosh:          2.14.0
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2026-11-09T02:35:28.648+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2026-11-09T02:35:29.898+00:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2026-11-09T02:35:29.898+00:00: For customers running MongoDB 7.0, we suggest changing the contents of the following sysfsFile
+------
+
+test> db.queue_entries.find({ player_id: "5f60a216fe134039ab26ff8dacc3b5cb", status: { $in: ["waiting", "reserved"] } })
+| db.queue_entries.countDocuments({ player_id: "5f60a216fe134039ab26ff8dacc3b5cb", status: { $in: ["waiting", "reserved"] } })
+0
+test> db.queue_entries.find({ player_id: "5f60a216fe134039ab26ff8dacc3b5cb", status: { $in: ["waiting", "reserved"] } })
+| db.queue_entries.countDocuments({ player_id: "5f60a216fe134039ab26ff8dacc3b5cb", status: { $in: ["waiting", "reserved"] } })
+0
+test> db.queue_entries.find({ player_id: "5f60a216fe134039ab26ff8dacc3b5cb", status: { $in: ["waiting", "reserved"] } })
+| db.queue_entries.countDocuments({ player_id: "5f60a216fe134039ab26ff8dacc3b5cb", status: { $in: ["waiting", "reserved"] } })
+0
+test>
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+test>
+PS C:\Users\kydsh\Downloads\mongodbgeneratequestion> docker compose stop worker
+[+] Stopping 1/1
+ ✔ Container matcharena-worker-1  Stopped                                                                       2.2s 
+PS C:\Users\kydsh\Downloads\mongodbgeneratequestion> use matcharena
+>> db.queue_entries.find({
+>>   player_id: "5f60a216fe134039ab26ff8dacc3b5cb",
+>>   status: { $in: ["waiting", "reserved"] }
+>> })
+>> db.queue_entries.countDocuments({
+>>   player_id: "5f60a216fe134039ab26ff8dacc3b5cb",
+>>   status: { $in: ["waiting", "reserved"] }
+>> })
+At line:4 char:13
++   status: { $in: ["waiting", "reserved"] }
++             ~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to      
+delimit the name.
+At line:4 char:18
++   status: { $in: ["waiting", "reserved"] }
++                  ~~~~~~~~~~
+Unexpected token '["waiting"' in expression or statement.
+At line:4 char:19
++   status: { $in: ["waiting", "reserved"] }
++                   ~
+Missing type name after '['.
+At line:4 char:28
++   status: { $in: ["waiting", "reserved"] }
++                            ~
+Missing argument in parameter list.
+At line:8 char:13
++   status: { $in: ["waiting", "reserved"] }
++             ~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to      
+delimit the name.
+At line:8 char:18
++   status: { $in: ["waiting", "reserved"] }
++                  ~~~~~~~~~~
+Unexpected token '["waiting"' in expression or statement.
+At line:8 char:19
++   status: { $in: ["waiting", "reserved"] }
++                   ~
+Missing type name after '['.
+At line:8 char:28
++   status: { $in: ["waiting", "reserved"] }
++                            ~
+Missing argument in parameter list.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : InvalidVariableReferenceWithDrive
+
+PS C:\Users\kydsh\Downloads\mongodbgeneratequestion> use matcharena
+use : The term 'use' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ use matcharena
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (use:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\kydsh\Downloads\mongodbgeneratequestion> docker compose exec mongo mongosh
+Current Mongosh Log ID: 6af1427a76a4c9332804ec89
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.14.0
+Using MongoDB:          7.0.45
+Using Mongosh:          2.14.0
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2026-11-09T02:35:28.648+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2026-11-09T02:35:29.898+00:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2026-11-09T02:35:29.898+00:00: For customers running MongoDB 7.0, we suggest changing the contents of the following sysfsFile
+------
+
+test> use matcharena
+| db.queue_entries.find({
+|   player_id: "5f60a216fe134039ab26ff8dacc3b5cb",
+|   status: { $in: ["waiting", "reserved"] }
+| })
+| db.queue_entries.countDocuments({
+|   player_id: "5f60a216fe134039ab26ff8dacc3b5cb",
+|   status: { $in: ["waiting", "reserved"] }
+| })
+switched to db matcharena
+matcharena> db.queue_entries.find({
+|   player_id: "5f60a216fe134039ab26ff8dacc3b5cb",
+|   status: { $in: ["waiting", "reserved"] }
+| })
+| db.queue_entries.countDocuments({
+|   player_id: "5f60a216fe134039ab26ff8dacc3b5cb",
+|   status: { $in: ["waiting", "reserved"] }
+| })
+0
+matcharena> db.queue_entries.find({ player_id: "5f60a216fe134039ab26ff8dacc3b5cb" })
+| db.players.findOne({ username: "alice" }, { status: 1, username: 1 })
+{
+  _id: '5f60a216fe134039ab26ff8dacc3b5cb',
+  username: 'alice',
+  status: 'in_game'
+}
+matcharena> db.queue_entries.find({
+|   player_id: "5f60a216fe134039ab26ff8dacc3b5cb",
+|   status: { $in: ["waiting", "reserved"] }
+| })
+| db.queue_entries.countDocuments({
+|   player_id: "5f60a216fe134039ab26ff8dacc3b5cb",
+|   status: { $in: ["waiting", "reserved"] }
+| })
+0
+matcharena> db.players.findOne({ username: "alice" }, { status: 1 })
+{ _id: '5f60a216fe134039ab26ff8dacc3b5cb', status: 'in_game' }
+matcharena> db.players.findOne({ username: "alice" }, { status: 1 })
+{ _id: '5f60a216fe134039ab26ff8dacc3b5cb', status: 'in_game' }
+matcharena> db.players.findOne({ username: "alice" }, { status: 1 })
+{ _id: '5f60a216fe134039ab26ff8dacc3b5cb', status: 'in_game' }
+matcharena> db.players.find({ username: "bob" }, { _id: 1, status: 1, username: 1 })
+[
+  {
+    _id: '6ca7fe2a36134dad919fd94f7ef91e90',
+    username: 'bob',
+    status: 'idle'
+  }
+]
+matcharena> db.queue_entries.find({ player_id: "6ca7fe2a36134dad919fd94f7ef91e90", status: { $in: ["waiting", "reserved"] } })
+| db.queue_entries.countDocuments({ player_id: "6ca7fe2a36134dad919fd94f7ef91e90", status: { $in: ["waiting", "reserved"] } })
+0
+matcharena> db.queue_entries.find({ player_id: "6ca7fe2a36134dad919fd94f7ef91e90", status: { $in: ["waiting", "reserved"] } })
+| db.queue_entries.countDocuments({ player_id: "6ca7fe2a36134dad919fd94f7ef91e90", status: { $in: ["waiting", "reserved"] } })
+1
+matcharena> db.queue_entries.find({ player_id: "6ca7fe2a36134dad919fd94f7ef91e90", status: { $in: ["waiting", "reserved"] } })
+| db.queue_entries.countDocuments({ player_id: "6ca7fe2a36134dad919fd94f7ef91e90", status: { $in: ["waiting", "reserved"] } })
+1
+matcharena>

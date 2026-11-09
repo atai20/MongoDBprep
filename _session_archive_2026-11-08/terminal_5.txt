@@ -1,0 +1,6 @@
+---
+pid: 56284
+cwd: |
+  C:\Users\kydsh\Downloads\mongodbgeneratequestion
+---
+PS C:\Users\kydsh\Downloads\mongodbgeneratequestion> 
